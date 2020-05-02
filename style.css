@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+body,h1,ul {
+	/*导航外边距删除*/
+	margin: 0;
+	/*导航内边距删除*/
+	padding: 0;
+}
+/*ul的小圆点删除*/
+ul {
+	list-style: outside none none;
+}
+/*文本下划线删除*/
+a {
+	text-decoration: none;
+}
+/*导航背景设置*/
+#nav {
+	/*不管背景分辨率，导航仍然100%*/
+	width: 100%;
+	height: 70px;
+	background-color: #333;
+}
+/*导航中子标签section设置，这样使用标签较简单*/
+#nav .center {
+	width: 1263px;
+	height: 70px;
+	margin: 0 auto;
+}
+#nav .logo {
+	width: 240px;
+	height: 70px;
+	background-image: url(../image/logo.png);
+	/*文本隐藏*/
+	text-indent: -9999px;
+	/**/
+	float: left;
+}
+#nav .link {
+	/*每个li=120,120*5+50=650，默认左对齐，这样增加右侧距离*/
+	width: 650px;
+	height: 70px;
+	/*等于行高=垂直居中*/
+	line-height: 70px;
+	color: #eee;
+	/*将li区块右浮动至右侧*/
+	float: right;
+}
+#nav .link li {
+	width: 120px;
+	/*水平居中*/
+	text-align: center;
+	/*li当作区块处理，左浮动以后会成为一行*/
+	float: left;
+}
+#nav .link a {
+	color: #eee;
+	/*a 本身内联，做成区块后会延伸。避免只能点击文字才起作用，而是整块都可以*/
+	display: block;
+}
+	/*放上鼠标后有颜色的变换效果*/
+#nav .link a:hover,
+	/*设置第一个li默认为选中，且为黑色*/
+#nav .active a {
+	background-color: #000;
+}
